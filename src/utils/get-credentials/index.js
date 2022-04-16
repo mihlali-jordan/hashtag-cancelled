@@ -15,6 +15,15 @@ let CREDENTIALS = {
   token_secret: '',
 }
 
+function validateInput(input) {
+  if (input) {
+    return true
+  } else {
+    console.error('invalid input')
+    return false
+  }
+}
+
 async function getApiCredentials() {
   const answers = await inquirer.prompt([
     {
@@ -22,8 +31,8 @@ async function getApiCredentials() {
       type: 'password',
       mask: true,
       message: 'Enter your api (consumer) key:',
-      default() {
-        return process.env.TWITTER_CONSUMER_KEY
+      validate: function (input) {
+        return validateInput(input)
       },
     },
     {
@@ -31,8 +40,8 @@ async function getApiCredentials() {
       type: 'password',
       mask: true,
       message: 'Enter your api (consumer) key secret:',
-      default() {
-        return process.env.TWITTER_CONSUMER_SECRET
+      validate: function (input) {
+        return validateInput(input)
       },
     },
     {
@@ -40,8 +49,8 @@ async function getApiCredentials() {
       type: 'password',
       mask: true,
       message: 'Enter your access token:',
-      default() {
-        return process.env.TWITTER_AUTH_TOKEN
+      validate: function (input) {
+        return validateInput(input)
       },
     },
     {
@@ -49,8 +58,8 @@ async function getApiCredentials() {
       type: 'password',
       mask: true,
       message: 'Enter your access token secret:',
-      default() {
-        return process.env.TWITTER_TOKEN_SECRET
+      validate: function (input) {
+        return validateInput(input)
       },
     },
   ])

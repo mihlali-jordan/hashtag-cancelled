@@ -2,7 +2,7 @@ import chalkAnimation from 'chalk-animation'
 import chalk from 'chalk'
 
 // Local modules
-import sleep from './sleep.js'
+import { sleep } from '../index.js'
 
 async function welcome() {
   const rainbowTitle = chalkAnimation.rainbow('Hashtag Cancelled \n')
@@ -18,4 +18,4 @@ async function welcome() {
   `)
 }
 
-export default welcome
+export { welcome }
