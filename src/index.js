@@ -3,7 +3,7 @@ import axios from 'axios'
 
 // Local modules
 import { welcome, getApiCredentials } from './utils/index.js'
-import OAuth1Helper from './utils/oauth1-helper.js'
+import { OAuth1Helper } from './utils/index.js'
 
 const base_url = 'https://api.twitter.com/2/tweets'
 const tweet_id = '151517405906724864'
