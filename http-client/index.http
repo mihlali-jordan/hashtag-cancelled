@@ -1,3 +1,12 @@
+# curl -X POST "https://api.twitter.com/2/tweets" -H "Authorization: OAuth $OAUTH_SIGNATURE" -H "Content-type: application/json" -d '{"text":"From the Twitter API"}'
+POST https://api.twitter.com/2/tweets
+Authorization: OAuth $OAUTH_SIGNATURE
+Content-Type: application/json
+
+{"text":"From the Twitter API"}
+
+###
+
 GET http://localhost:8080/
 Accept: application/json
 
